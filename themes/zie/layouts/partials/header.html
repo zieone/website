@@ -1,0 +1,30 @@
+    <nav id="menu" class="menu">
+        <div class="dropdown">
+            <ul id="nav">
+           {{ $currentPage := . }}
+           {{ range .Site.RegularPages.GroupBy "Section" }}
+           <li class="dropdown">
+                <a class="dropbtn" href="{{($.Site.GetPage "section" .Key).URL}}">{{ ($.Site.GetPage "section" .Key).Title | default "Home" }}</A>
+           <div class="dropdown-content">
+                    {{ range .Pages }}
+                    <a  href="{{ .Permalink}}" title="{{ .Title }}">{{ .Name }}</a>
+                    {{ end }}
+           </div>
+             {{end}}
+             </li>
+             <li id="language" class="dropdown">
+            <a class="dropbtn" href="#">Languages</a>
+            <div class="dropdown-content">
+            {{ range .Site.Home.AllTranslations }} 
+                <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+            {{ end }}
+            {{ if .IsTranslated }}
+            {{ range .Translations }}
+                <a href="{{ .Permalink }}">Translation: {{ .Lang }} {{ .Title }}{{ if .IsPage }} {{ end }}</a>
+            {{ end}}
+            {{ end }}
+            </div>
+            </li>
+            </ul>
+        </div>
+    </nav>

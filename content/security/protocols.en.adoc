@@ -1,0 +1,147 @@
++++
+title = "Protocols"
+date = "2018-08-12"
++++
+
+There are a lot of areas around cryptography protocols and what one should do to accomplish various things, see the table below for a good summary of many different areas.
+
+Another answer, if use link:https://vaultproject.io[Hashicorp's Vault] for most all of these areas, and let them make the hard crypto decisions for you.
+
+.Summary 
+[cols="2,3a,3a,3a"]
+|===
+| Area
+| Percival in 2009
+| Ptacek in 2015
+| Latacora in 2018
+
+| Online backups
+| tarsnap 
+| tarsnap 
+| tarsnap
+
+|Symmetric key length 
+| 256-bit 
+| 256-bit 
+| 256 bit
+
+|Symmetric “Signatures”
+|HMAC
+|HMAC
+|HMAC
+
+|Random IDs
+|256-bit
+|256-bit
+|256-bit
+
+|Hashing algorithm
+| SHA256 (SHA-2)
+| SHA-2	
+| SHA-2
+
+|Password handling
+| Algorithms:  
+
+* scrypt
+* PBKDF2
+
+| Algorithms:  
+
+* scrypt
+* bcrypt
+* PBKDF2
+
+| Algorithms:  
+
+* scrypt
+* argon2
+* bcrypt
+* PBKDF2
+
+|Website security
+| OpenSSL
+
+| Libraries:  
+
+* OpenSSL
+* BoringSSL
+* AWS ALB/ELB
+
+| Libraries:  
+
+* AWS ALB/ELB
+* OpenSSL
+* LetsEncrypt
+
+| Client-server app security
+| OpenSSL
+| Libraries:  
+
+*  OpenSSL
+* BoringSSL
+* AWS ELBs
+
+| Libraries:  
+
+* AWS ALB/ELB
+* OpenSSL
+* LetsEncrypt
+
+| Asymmetric encryption	
+| Use link:http://www.ietf.org/rfc/rfc3447.txt[RSAES-OAEP] with SHA256 as the hash function, MGF1+SHA256 as the mask generation function, and a public exponent of 65537. Make sure that you follow the decryption algorithm to the letter in order to avoid side channel attacks.
+| NaCl/libsodium
+| NaCl/libsodium
+
+|Asymmetric signatures
+| Use link:http://www.ietf.org/rfc/rfc3447.txt[RSASSA-PSS] with SHA256 as the hash function, MGF1+SHA256 as the mask generation function, and a public exponent of 65537.
+|  Algorithms:
+
+* NaCl
+* Ed25519
+* RFC6979
+
+| Algorithms:
+
+* NaCl
+* Ed25519
+
+| Diffie-Hellman
+| 2048-bit Group #14 with a generator or 2
+| Algorithms:
+
+* DH-2048
+* NaCl
+
+|  Algorithms:
+
+* Nothing
+* Curve25519
+
+| Encrypting Data
+| AES-CTR HMAC
+| Algorithms:
+
+* NaCl/libsodium default
+* ChaCha20-Poly1305
+* AES-GCM
+
+| Algorithms:
+
+* Amazon KMS
+* XSalsa20+Poly1305
+
+|===
+
+Above table from: https://news.ycombinator.com/item?id=16748400 (author: weinzierl) sources for the table:
+
+* Latacora: https://latacora.singles/2018/04/03/cryptographic-right-answers.html
+* Percival: http://www.daemonology.net/blog/2009-06-11-cryptographic-right-answers.html
+* tptacek: https://gist.github.com/tqbf/be58d2d39690c3b366ad
+
+=== Learn more about crypto: 
+
+ * https://cryptopals.com/sets/1
+ * https://www.crypto101.io/
+
+

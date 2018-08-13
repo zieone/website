@@ -1,0 +1,10 @@
++++
+date = "2018-08-12"
+title = "Security Best Practices"
++++
+
+It's important that best practices for security are talked about, and reasons are given and understood for why one should do something. It's important that we talk about "best practices" and get them out in the sunlight where they can be properly disinfected if needed.
+
+This document tries to explain what the best practices in security are, currently, and why they are that way. 
+
+This should be a living document (every page has a date in the footer showing the last time it was updated) that not only says what to do, but why one should do it.  Backed up preferably with facts and citations.  See the left menu for current content about security best practices.

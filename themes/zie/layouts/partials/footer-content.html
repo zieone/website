@@ -1,0 +1,8 @@
+{{ $dateFormat := default "Jan 2, 2006" (index .Site.Params "date_format") }}
+
+<center>
+<p class="article-meta">
+    <span class="article-meta-published-at grey-text text-darken-1">Published: {{ .Date.Format $dateFormat }}</span>
+</p>
+<span class="grey-text text-darken-4">{{ .Site.Copyright }}</span>
+</center>

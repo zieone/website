@@ -1,0 +1,23 @@
+<UL>
+	<li>
+			{{$sec := .Section}}
+			{{with .Site.GetPage "section" $sec}}
+		<a href="{{ .Permalink }}"> {{ .Title  | default "Index"}}</A>
+			{{end}}
+	</li>
+{{ $section := .Section }}
+  {{ range where .Site.RegularPages "Section" $section }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>    
+  {{ end }}
+</UL>
+{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ with $related }}
+<h5>See Also</h5>
+<ul>
+	{{ range . }}
+	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+	{{ end }}
+</ul>
+{{ end }}

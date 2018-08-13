@@ -1,0 +1,64 @@
++++
+date = "2018-08-12"
+title = "Kolab Setup Page"
++++
+Kolab is not available to the general public, for an account email the domain admin.
+
+== Mail Setup:
+
+== Contacts setup
+* macOS Contacts:
+	** Contacs/add account
+		** Other Carddav Account
+		** Username: Your Email Address
+		** Password: Your Password
+* iOS
+	** Settings/Accounts & Passwords/Add Account
+	** Other / Add CardDAV Account
+	** Enter Email and Password
+	** Advanced Settings:
+		*** Use SSL: True
+		*** Port: 443
+		*** Account URL: https://kolab.zie.one/iRony/addressbooks/
+* Manual:
+	** login to web kolab(https://kolab.zie.one)
+		*** Select your address book from the menu on the right.
+		*** Select the address book you want to sync
+		*** Click on the gear
+		*** Select 'Show Carddav URL'
+
+== Calendar/Tasks Setup
+
+* macOS Calendar:
+	** Calender/add account 
+	** Other Caldav Account
+		*** Username: Your Email Address
+		*** Password: Your Password
+	** Calendar/Accounts
+		*** Select the caldav account you just created(probably called Zie)
+		***Check the box next to Reminders
+* iOS:
+	** Settings/Accounts & Passwords/Add Account
+	** Other / Add CalDAV Account
+	** Enter Email and Password
+	** Advanced Settings:
+		*** Use SSL: True
+		*** Port: 443
+		*** Account URL: https://kolab.zie.one/iRony/calendars/
+* Manual
+	** login to web kolab(https://kolab.zie.one)
+	** Select your Calendar from the menu on the right.
+	** Select the Calendar you want to sync
+	** Click on the gear
+	** Select 'Show Carddav URL'
+
+=== URLS: 
+
+	* https://kolab
+	* chwala: /chwala/
+	* iRony: /iRony/
+	* kolab-freebusy: /freebusy/
+	* kolab-webadmin: /kolab-webadmin/
+	* roundcubemail: /roundcubemail/
+
+You can email us at this domain to the user: admin

@@ -1,0 +1,21 @@
++++
+categories = ["SSB", "Legal"]
+date = "2018-08-12"
+description = "Secure Scuttlebutt Legal"
+slug = "ssb-legal"
+tags = ["legal","SSB","scuttlebut"]
+title = "SSB legal"
++++
+Scuttlebut and other services are open to the general public. The way scuttlebut works, we have no way to police or enforce any content.
+
+If you are law enforcement, we require subpeonas for information, about a visitor. 
+However, you should know that we probably do not have any information of use to your investigations.
+
+Information we collect:
+
+* IP address while a user is currently connected. Usually not logged past 24hrs.
+* Data required for the https://ssbc.github.io/scuttlebutt-protocol-guide/[Scuttlebut protocol].
+
+You can email us at this domain: admin @ zie.one
+
+We do store banned IP addresses for longer than 24 hours.  We have no metrics or analytic collection here and try to not use any javascript.

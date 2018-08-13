@@ -1,0 +1,19 @@
++++
+categories = ["ASL", "Readme"]
+date = "2018-08-12"
+description = "ASL Readme"
+slug = "asl-readme"
+tags = ["asl"]
+title = "ASL README"
+draft = true
++++
+
+Catalan version.
+Handshapes:
+
+* image: https://github.com/huntergdavis/asljs/tree/master/images
+* video: https://github.com/siracoj/signtolearn/tree/master/signtolearn/TrainingVideos
+* DB: https://www.bu.edu/av/asllrp/dai-asllvd.html
+* https://moodle.converse.edu/asl2english/
+
+Other stuff, maybe or maybe not.

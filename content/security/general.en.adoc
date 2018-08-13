@@ -1,0 +1,79 @@
++++
+date = "2018-08-12"
+title = "General Security Practices"
++++
+
+Be conservative with what you put in production.::
+	This rule is based on keeping your production systems as
+	simple as possible.  Simple is always better than complex,
+	they are easier to reason about and easier to secure, because
+	it's simpler to know what's going on. The more complex your
+	stack is, the harder it is to secure.
+
+Use boring technology whenever possible.::
+	Boring technology is well understood by a wider swath of
+	people. It's been used enough that all the sharp edges have
+	been worn down, and the hard corners that are left are well
+	marked in documentation, people's knowledge, etc.  New tech
+	is great, and sometimes  you need to use it, but if an
+	older(but maintained) technology can meet your needs, you
+	should use that first.  
+	This is not to say you should use
+	PDP-11's, they are no longer maintained.  You don't want
+	to be like the Nuclear Missile silos in the USA link:https://www.bbc.co.uk/news/world-us-canada-36385839[still using
+	floppy disks]!  If nobody is maintaining the software
+	you use, that means you are, and that's usually a bad
+	position to be in security wise.
+
+Limit exposure::
+turn off unused things, erase unused software and
+enable default deny policies.
+	* This is one of the hardest things to manage, implement
+	and maintain.  Software is usually developed with everything
+	enabled, turned on and set in accept mode.  If you develop
+	software, you should include tests with default deny policies
+	enabled as well.  * This means firewalls on every machine,
+	but also in software configuration, if you don't need Feature
+	X, turn it off.  This is all about limiting exposure, the
+	less that is exposed to bad people, the harder it is for
+	them to get a foothold and break into stuff.  * If your OS
+	installs a bunch of software you will never use, delete it.
+	* Try not to install extra software on your production
+	machines, your production instances probably don't need
+	compilers, debuggers and the like, uninstall that stuff.
+	The more minimal your production machines can be, the harder
+	time a bad person will have once they do get in.
+
+Provide Defense in Depth.::
+	Single solutions are a horrible way to keep secure.
+
+Fail early, fail often, and fail securely.::
+	Verify that when things do go unexpectedly, you fail,
+	fast, loudly and securely. An ATM vendor would go out of
+	business in a hurry, if every time an ATM machine rebooted
+	or broke, it would start spitting $20 bills from it's slot.
+	Make your software behave sanely when it breaks.  It should
+	report it's failure to you, and it should then do the right
+	thing with the person calling it.  I.e. you probably don't
+	want your website to start showing debug information to your
+	end-users if it fails, as the debug information will likely
+	show usernames and passwords, or at the very least show
+	detailed implementation information for a determined bad
+	actor to learn more about your system(s).
+
+Keep up to date::
+	link:https://arstechnica.com/information-technology/2017/09/why-the-equifax-breach-is-very-possibly-the-worst-leak-of-personal-info-ever/[Equifax] is the largest recent reason for why keeping up to
+	date software is a huge security win.  Most attackers are
+	just as lazy as we are, and use known security exploits.
+	Don't let the lazy ones walk off with everything.  Keep up
+	to date with security releases.  Subscribe to your operating
+	system(s) security release announcements and install the
+	updates as soon as possible.  For when you reach outside
+	of your OS software for solutions(which you should keep to
+	a minimum if possible) keep up with the security and
+	development of those, and be diligent.
+
+Resources:
+
+* Overall state of security: http://spw18.langsec.org/papers/mike-walker-keynote-langsec2018.txt
+

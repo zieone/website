@@ -1,0 +1,25 @@
+<div id="nav">
+    <nav class="menu">
+            <ul id="nav">
+           {{ $currentPage := . }}
+           {{ range .Data.Pages.GroupBy "Section" }}
+                    <LI>
+                            <a href="{{($.Site.GetPage "section" .Key).URL}}">{{ ($.Site.GetPage "section" .Key).Title }}</A>
+                    {{ range .Pages }}
+                    <a  href="{{ .Permalink}}" title="{{ .Title }}">{{ .Name }}</a>
+                    {{ end }}
+                </li>
+             {{end}}
+        <li> 
+            <a href="#">Languages</a>
+            {{ range .Site.Home.AllTranslations }} 
+                <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+            {{ end }}
+            {{ if .IsTranslated }}
+            {{ range .Translations }}
+                <a href="{{ .Permalink }}">{{ .Lang }}: {{ .Title }}{{ if .IsPage }} ({{ i18n "wordCount" . }}){{ end }}</a>
+            {{ end}}
+            {{ end }}
+        </ul>
+    </nav>
+</div>
